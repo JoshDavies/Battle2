@@ -2,7 +2,10 @@
 <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
 </h1>
 <h2>
-<%= @game.player_2.name %>: 60HP
+<%= @game.turn.name %> take your turn!
+</h2>
+<h2>
+<%= @game.player_2.name %>: <%= @game.player_2.hp %>HP
 </h2>
 
 <form action= "/attack" >

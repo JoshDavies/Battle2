@@ -25,4 +25,11 @@ describe Game do
     end
   end
 
+  describe '#switch_turn' do
+    it 'switches the turn variable between players' do
+      expect(player_2).to receive(:takes_damage)
+      game.attack(player_2)
+      expect(game.turn).to eq player_2
+    end
+  end
 end
