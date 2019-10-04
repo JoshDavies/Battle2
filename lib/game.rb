@@ -32,4 +32,8 @@ class Game
     end
   end
 
+  def player_loses?
+    @players.last.hp == 0
+  end
+
 end

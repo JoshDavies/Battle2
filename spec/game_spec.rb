@@ -4,8 +4,8 @@ describe Game do
 
   subject(:game) { described_class.new(player_1, player_2) }
 
-  let(:player_1) { double :player }
-  let(:player_2) { double :player }
+  let(:player_1) { double :player, hp: 60 }
+  let(:player_2) { double :player, hp: 60 }
 
     describe '#player_1 and #player_2' do
       it 'gets a player_1' do
