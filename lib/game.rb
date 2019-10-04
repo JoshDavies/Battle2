@@ -20,7 +20,7 @@ class Game
     if player == player_1
       player_2.takes_damage
     else
-    player_1.takes_damage
+      player_1.takes_damage
     end
   end
 
@@ -32,8 +32,16 @@ class Game
     end
   end
 
-  def player_loses?
-    @players.last.hp == 0
+  def player_loses?(player)
+    player.hp == 0
+  end
+
+  def opponent?
+    if @turn == player_1
+      @players.last
+    else
+      @players.first
+    end
   end
 
 end

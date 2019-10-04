@@ -24,10 +24,8 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     @game.attack(@game.turn)
+    redirect '/lose_game' if @game.player_loses?(@game.opponent?)
     @game.switch_turn
-    if @game.player_loses?
-      redirect '/lose_game'
-    end
     erb :attack
   end
 

@@ -3,9 +3,10 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player_1, player_2) }
-
+  subject(:game2) { described_class.new(player_1, dead_player) }
   let(:player_1) { double :player, hp: 60 }
   let(:player_2) { double :player, hp: 60 }
+  let(:dead_player) { double :player, hp: 0 }
 
     describe '#player_1 and #player_2' do
       it 'gets a player_1' do
@@ -33,4 +34,12 @@ describe Game do
       expect(game.turn).to eq player_2
     end
   end
+
+  describe '#player_loses?' do
+    it 'returns true if player hp is 0' do
+      expect(game2.player_loses?(dead_player)).to eq true
+    end
+  end
+
+
 end
