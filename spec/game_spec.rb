@@ -20,7 +20,7 @@ describe Game do
     describe '#attack' do
       it 'allows player1 to attack player2' do
         expect(player_2).to receive(:takes_damage)
-        game.attack(player_2)
+        game.attack(player_1)
       end
     end
   end
@@ -28,7 +28,8 @@ describe Game do
   describe '#switch_turn' do
     it 'switches the turn variable between players' do
       expect(player_2).to receive(:takes_damage)
-      game.attack(player_2)
+      game.attack(player_1)
+      game.switch_turn
       expect(game.turn).to eq player_2
     end
   end

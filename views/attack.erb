@@ -2,10 +2,10 @@
 <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
 </h1>
 <h2>
-<%= @game.turn.name %> attacked the other chap
+<%= @game.turn.name %> took damage
 </h2>
 <h2>
-<%= @game.player_2.name %>: <%= @game.player_2.hp %>HP
+<%= @game.turn.name %>: <%= @game.turn.hp %>HP
 </h2>
 
 <form action="/switch_turn">

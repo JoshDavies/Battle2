@@ -17,8 +17,11 @@ class Game
   end
 
   def attack(player)
-    player.takes_damage
-    switch_turn
+    if player == player_1
+      player_2.takes_damage
+    else
+    player_1.takes_damage
+    end
   end
 
   def switch_turn
